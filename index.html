@@ -3,100 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프리미엄 분양 정보 센터</title>
+    <title>Premium Real Estate Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
-        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
-        .btn-hover { transition: all 0.2s; }
-        .btn-hover:active { transform: scale(0.95); }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #fcfcfd; color: #1d1d1f; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        }
+        .gradient-blue { background: linear-gradient(135deg, #007aff 0%, #0051af 100%); }
+        .gradient-dark { background: linear-gradient(135deg, #424245 0%, #1d1d1f 100%); }
+        .btn-action { transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-action:active { transform: scale(0.96); }
     </style>
 </head>
-<body class="pb-28">
+<body class="pb-32">
 
-    <header class="bg-slate-900 text-white py-8 text-center shadow-lg">
-        <h1 class="text-2xl font-bold tracking-tight">PREMIUM INVESTMENT</h1>
-        <p class="text-[11px] text-slate-400 mt-1 uppercase tracking-[0.3em]">Apartment & Commercial Mall</p>
+    <header class="pt-12 pb-8 px-6 text-center">
+        <p class="text-blue-600 font-bold text-xs tracking-widest uppercase mb-2">Exclusive Selection</p>
+        <h1 class="text-3xl font-extrabold tracking-tight">광주 분양 <span class="text-slate-400 font-medium">마스터 리스트</span></h1>
     </header>
 
-    <main class="max-w-md mx-auto p-4 space-y-10">
+    <main class="max-w-md mx-auto px-6 space-y-12">
         
-        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
-            <img src="apt_a.jpg" alt="A아파트" class="w-full h-56 object-cover bg-gray-200">
-            <div class="p-6">
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded-md font-bold italic">BEST</span>
-                    <h2 class="text-2xl font-bold text-slate-800">A 아파트 (송정)</h2>
-                </div>
-                <p class="text-gray-500 text-sm mb-6 leading-relaxed">송정역세권의 압도적 입지 조건과<br>미래 가치를 누리는 명품 주거 단지</p>
-                
-                <div class="grid grid-cols-3 gap-2">
-                    <a href="a.pdf" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-slate-50 border border-slate-200 py-3 rounded-2xl">
-                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold text-slate-700">브로슈어</span>
-                    </a>
-                    <a href="tel:010-2556-7974" class="btn-hover flex flex-col items-center justify-center bg-blue-600 shadow-md py-3 rounded-2xl text-white">
-                        <i class="fa-solid fa-phone mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold">전화상담</span>
-                    </a>
-                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-green-500 shadow-md py-3 rounded-2xl text-white">
-                        <i class="fa-solid fa-window-maximize mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold">자세히보기</span>
-                    </a>
+        <article class="glass-card rounded-[2.5rem] overflow-hidden">
+            <div class="relative">
+                <img src="apt_a.jpg" alt="A아파트" class="w-full h-64 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-blue-600/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">STATION PIANO</span>
                 </div>
             </div>
-        </section>
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-2">A 아파트 <span class="text-gray-400 font-normal ml-1">송정</span></h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">역세권의 압도적 입지 조건과<br>송정지구의 미래 가치를 선점하세요.</p>
+                <div class="flex flex-col gap-3 text-center">
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="a.pdf" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">브로슈어</a>
+                        <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">분석 보기</a>
+                    </div>
+                    <a href="tel:010-0000-0000" class="btn-action gradient-blue py-4 rounded-2xl text-white font-bold shadow-lg shadow-blue-100">송정 상담 연결</a>
+                </div>
+            </div>
+        </article>
 
-        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
-            <img src="apt_b.jpg" alt="B아파트" class="w-full h-56 object-cover bg-gray-200">
-            <div class="p-6">
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="bg-green-600 text-white text-[10px] px-2 py-1 rounded-md font-bold">NEW</span>
-                    <h2 class="text-2xl font-bold text-slate-800">B 아파트 (수완)</h2>
-                </div>
-                <p class="text-gray-500 text-sm mb-6 leading-relaxed">광주 최고의 명품 학군과<br>숲세권 힐링 라이프의 완벽한 조화</p>
-                
-                <div class="grid grid-cols-3 gap-2">
-                    <a href="b.pdf" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-slate-50 border border-slate-200 py-3 rounded-2xl">
-                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold text-slate-700">브로슈어</span>
-                    </a>
-                    <a href="tel:010-2556-7974" class="btn-hover flex flex-col items-center justify-center bg-blue-600 shadow-md py-3 rounded-2xl text-white">
-                        <i class="fa-solid fa-phone mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold">전화상담</span>
-                    </a>
-                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-green-500 shadow-md py-3 rounded-2xl text-white">
-                        <i class="fa-solid fa-window-maximize mb-1 text-lg"></i>
-                        <span class="text-[11px] font-bold">자세히보기</span>
-                    </a>
+        <article class="glass-card rounded-[2.5rem] overflow-hidden">
+            <div class="relative">
+                <img src="apt_b.jpg" alt="B아파트" class="w-full h-64 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-green-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">EDU & PARK</span>
                 </div>
             </div>
-        </section>
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-2">B 아파트 <span class="text-gray-400 font-normal ml-1">수완</span></h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">광주 최고의 명품 학군 인프라와<br>숲세권의 쾌적함을 동시에 소유하세요.</p>
+                <div class="flex flex-col gap-3 text-center">
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="b.pdf" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">브로슈어</a>
+                        <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">분석 보기</a>
+                    </div>
+                    <a href="tel:010-0000-0000" class="btn-action gradient-blue py-4 rounded-2xl text-white font-bold shadow-lg shadow-blue-100">수완 상담 연결</a>
+                </div>
+            </div>
+        </article>
 
-        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border-2 border-amber-400">
-            <img src="mall.jpg" alt="D상가" class="w-full h-56 object-cover bg-gray-200">
-            <div class="p-6 text-center">
-                <h2 class="text-2xl font-bold text-slate-800 mb-2">D 테라스 스퀘어</h2>
-                <p class="text-amber-600 font-bold text-xs mb-6 uppercase tracking-widest">수익형 부동산 독점 상가</p>
-                
-                <div class="grid grid-cols-2 gap-3 mb-4">
-                    <a href="tel:010-2556-7974" class="btn-hover flex items-center justify-center gap-2 bg-slate-800 text-white py-4 rounded-2xl font-bold text-sm shadow-lg">
-                        <i class="fa-solid fa-phone"></i> 전화상담
-                    </a>
-                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex items-center justify-center gap-2 bg-green-500 text-white py-4 rounded-2xl font-bold text-sm shadow-lg">
-                        <i class="fa-solid fa-blog"></i> 블로그보기
-                    </a>
+        <article class="glass-card rounded-[2.5rem] overflow-hidden">
+            <div class="relative">
+                <img src="apt_c.jpg" alt="C아파트" class="w-full h-64 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-purple-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">NEW LAUNCH</span>
                 </div>
             </div>
-        </section>
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-2">C 아파트 <span class="text-gray-400 font-normal ml-1">첨단</span></h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">첨단 3지구의 핵심 가치를 담은<br>직주근접형 하이엔드 단지입니다.</p>
+                <div class="flex flex-col gap-3 text-center">
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="c.pdf" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">브로슈어</a>
+                        <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700">분석 보기</a>
+                    </div>
+                    <a href="tel:010-0000-0000" class="btn-action gradient-blue py-4 rounded-2xl text-white font-bold shadow-lg shadow-blue-100">첨단 상담 연결</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="gradient-dark rounded-[2.5rem] overflow-hidden text-white shadow-2xl border border-white/5">
+            <div class="p-8 text-center">
+                <span class="text-amber-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-2 block">Premium Shop</span>
+                <h2 class="text-2xl font-bold mb-4">D 테라스 스퀘어 <span class="text-white/40 font-normal">상가</span></h2>
+                <p class="text-white/60 text-sm leading-relaxed mb-8 px-4">고정 수요 2,000세대가 보장된 항아리 상권<br>수익형 부동산의 절대적 투자가치를 확인하세요.</p>
+                <div class="space-y-3 px-2">
+                    <a href="tel:010-0000-0000" class="btn-action bg-white text-black flex items-center justify-center gap-2 py-5 rounded-2xl font-bold">전화로 수익률 분석 상담</a>
+                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-action bg-white/10 flex items-center justify-center py-4 rounded-2xl text-sm font-semibold border border-white/10">블로그 상세 데이터</a>
+                </div>
+            </div>
+        </article>
 
     </main>
 
-    <div class="fixed bottom-0 w-full max-w-md left-1/2 -translate-x-1/2 p-4 z-50">
-        <a href="tel:010-2556-7974" class="flex items-center justify-center gap-3 w-full bg-red-500 text-white py-5 rounded-[1.5rem] text-xl font-bold shadow-2xl animate-bounce">
-            <i class="fa-solid fa-headset"></i>
-            실시간 분양 상담 연결
+    <div class="fixed bottom-6 w-full max-w-md left-1/2 -translate-x-1/2 px-6 z-50">
+        <a href="tel:010-0000-0000" class="gradient-dark flex items-center justify-center gap-3 w-full py-5 rounded-full text-white font-bold shadow-2xl border border-white/20">
+            <div class="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+            실시간 전문 상담원 연결
         </a>
     </div>
 
