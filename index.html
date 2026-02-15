@@ -8,89 +8,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
-        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f1f5f9; }
-        .card-animate { transition: transform 0.2s; }
-        .card-animate:active { transform: scale(0.98); }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
+        .btn-hover { transition: all 0.2s; }
+        .btn-hover:active { transform: scale(0.95); }
     </style>
 </head>
 <body class="pb-28">
 
-    <header class="bg-slate-900 text-white py-6 px-4 shadow-xl relative">
-        <div class="text-center">
-            <h1 class="text-xl font-bold tracking-tight uppercase">Premium Investment</h1>
-            <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-[0.2em]">Apartment & Commercial Mall</p>
-        </div>
-        <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="absolute right-4 top-6 bg-green-500 text-white text-[10px] px-3 py-2 rounded-full font-bold flex items-center shadow-lg">
-            <i class="fa-solid fa-blog mr-1"></i> 블로그
-        </a>
+    <header class="bg-slate-900 text-white py-8 text-center shadow-lg">
+        <h1 class="text-2xl font-bold tracking-tight">PREMIUM INVESTMENT</h1>
+        <p class="text-[11px] text-slate-400 mt-1 uppercase tracking-[0.3em]">Apartment & Commercial Mall</p>
     </header>
 
-    <main class="max-w-md mx-auto p-4 space-y-8">
+    <main class="max-w-md mx-auto p-4 space-y-10">
         
-        <section class="bg-white rounded-3xl overflow-hidden shadow-lg card-animate">
-            <img src="apt_a.jpg" alt="A아파트" class="w-full h-52 object-cover bg-gray-200">
+        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
+            <img src="apt_a.jpg" alt="A아파트" class="w-full h-56 object-cover bg-gray-200">
             <div class="p-6">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">A 아파트 (송정)</h2>
-                    <span class="bg-blue-100 text-blue-600 text-[10px] px-2 py-1 rounded-md font-bold">분양중</span>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-blue-600 text-white text-[10px] px-2 py-1 rounded-md font-bold italic">BEST</span>
+                    <h2 class="text-2xl font-bold text-slate-800">A 아파트 (송정)</h2>
                 </div>
-                <p class="text-sm text-gray-500 mb-5">광주 송정역세권 프리미엄과 완벽한 인프라</p>
-                <div class="grid grid-cols-2 gap-3">
-                    <a href="a.pdf" target="_blank" class="flex flex-col items-center justify-center bg-slate-50 py-3 rounded-2xl border border-slate-100">
-                        <i class="fa-solid fa-file-pdf text-red-500 mb-1"></i>
-                        <span class="text-xs font-bold text-slate-700">브로슈어</span>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">송정역세권의 압도적 입지 조건과<br>미래 가치를 누리는 명품 주거 단지</p>
+                
+                <div class="grid grid-cols-3 gap-2">
+                    <a href="a.pdf" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-slate-50 border border-slate-200 py-3 rounded-2xl">
+                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold text-slate-700">브로슈어</span>
                     </a>
-                    <a href="tel:010-0000-0000" class="flex flex-col items-center justify-center bg-blue-600 text-white py-3 rounded-2xl shadow-md">
-                        <i class="fa-solid fa-phone mb-1"></i>
-                        <span class="text-xs font-bold">전화상담</span>
+                    <a href="tel:010-2556-7974" class="btn-hover flex flex-col items-center justify-center bg-blue-600 shadow-md py-3 rounded-2xl text-white">
+                        <i class="fa-solid fa-phone mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold">전화상담</span>
+                    </a>
+                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-green-500 shadow-md py-3 rounded-2xl text-white">
+                        <i class="fa-solid fa-window-maximize mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold">자세히보기</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-3xl overflow-hidden shadow-lg card-animate">
-            <img src="apt_b.jpg" alt="B아파트" class="w-full h-52 object-cover bg-gray-200">
+        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
+            <img src="apt_b.jpg" alt="B아파트" class="w-full h-56 object-cover bg-gray-200">
             <div class="p-6">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="text-xl font-bold text-slate-800">B 아파트 (수완)</h2>
-                    <span class="bg-green-100 text-green-600 text-[10px] px-2 py-1 rounded-md font-bold">마감임박</span>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-green-600 text-white text-[10px] px-2 py-1 rounded-md font-bold">NEW</span>
+                    <h2 class="text-2xl font-bold text-slate-800">B 아파트 (수완)</h2>
                 </div>
-                <p class="text-sm text-gray-500 mb-5">수완지구 명품 학군과 쾌적한 숲세권 라이프</p>
-                <div class="grid grid-cols-2 gap-3">
-                    <a href="b.pdf" target="_blank" class="flex flex-col items-center justify-center bg-slate-50 py-3 rounded-2xl border border-slate-100">
-                        <i class="fa-solid fa-file-pdf text-red-500 mb-1"></i>
-                        <span class="text-xs font-bold text-slate-700">브로슈어</span>
+                <p class="text-gray-500 text-sm mb-6 leading-relaxed">광주 최고의 명품 학군과<br>숲세권 힐링 라이프의 완벽한 조화</p>
+                
+                <div class="grid grid-cols-3 gap-2">
+                    <a href="b.pdf" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-slate-50 border border-slate-200 py-3 rounded-2xl">
+                        <i class="fa-solid fa-file-pdf text-red-500 mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold text-slate-700">브로슈어</span>
                     </a>
-                    <a href="tel:010-0000-0000" class="flex flex-col items-center justify-center bg-green-600 text-white py-3 rounded-2xl shadow-md">
-                        <i class="fa-solid fa-phone mb-1"></i>
-                        <span class="text-xs font-bold">전화상담</span>
+                    <a href="tel:010-2556-7974" class="btn-hover flex flex-col items-center justify-center bg-blue-600 shadow-md py-3 rounded-2xl text-white">
+                        <i class="fa-solid fa-phone mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold">전화상담</span>
+                    </a>
+                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex flex-col items-center justify-center bg-green-500 shadow-md py-3 rounded-2xl text-white">
+                        <i class="fa-solid fa-window-maximize mb-1 text-lg"></i>
+                        <span class="text-[11px] font-bold">자세히보기</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-3xl overflow-hidden shadow-lg border-2 border-amber-400 card-animate">
-            <img src="mall.jpg" alt="D상가" class="w-full h-52 object-cover bg-gray-200">
+        <section class="bg-white rounded-[2rem] overflow-hidden shadow-xl border-2 border-amber-400">
+            <img src="mall.jpg" alt="D상가" class="w-full h-56 object-cover bg-gray-200">
             <div class="p-6 text-center">
-                <h2 class="text-xl font-bold text-slate-800 mb-1">D 테라스 스퀘어 상가</h2>
-                <p class="text-xs text-amber-600 font-bold mb-4 uppercase">Commercial Mall Premium</p>
-                <a href="tel:010-0000-0000" class="flex items-center justify-center w-full bg-slate-800 text-white py-4 rounded-2xl font-bold shadow-lg mb-3">
-                    수익률 및 분양가 상담
-                </a>
-                <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="text-xs text-slate-400 underline decoration-slate-300">
-                    상가 상세 정보 블로그에서 보기
-                </a>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">D 테라스 스퀘어</h2>
+                <p class="text-amber-600 font-bold text-xs mb-6 uppercase tracking-widest">수익형 부동산 독점 상가</p>
+                
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <a href="tel:010-2556-7974" class="btn-hover flex items-center justify-center gap-2 bg-slate-800 text-white py-4 rounded-2xl font-bold text-sm shadow-lg">
+                        <i class="fa-solid fa-phone"></i> 전화상담
+                    </a>
+                    <a href="https://blog.naver.com/microsoft-cto" target="_blank" class="btn-hover flex items-center justify-center gap-2 bg-green-500 text-white py-4 rounded-2xl font-bold text-sm shadow-lg">
+                        <i class="fa-solid fa-blog"></i> 블로그보기
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="fixed bottom-0 w-full max-w-md left-1/2 -translate-x-1/2 p-4 z-50 bg-white/80 backdrop-blur-sm border-t border-gray-100">
-        <a href="tel:010-0000-0000" class="flex items-center justify-center gap-3 w-full bg-red-500 text-white py-4 rounded-2xl text-lg font-bold shadow-2xl animate-pulse">
+    <div class="fixed bottom-0 w-full max-w-md left-1/2 -translate-x-1/2 p-4 z-50">
+        <a href="tel:010-2556-7974" class="flex items-center justify-center gap-3 w-full bg-red-500 text-white py-5 rounded-[1.5rem] text-xl font-bold shadow-2xl animate-bounce">
             <i class="fa-solid fa-headset"></i>
-            실시간 상담원 연결
+            실시간 분양 상담 연결
         </a>
-    </footer>
+    </div>
 
 </body>
 </html>
