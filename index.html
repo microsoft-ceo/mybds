@@ -10,31 +10,88 @@
         body { font-family: 'Pretendard', sans-serif; background-color: #fcfcfd; color: #1d1d1f; }
         .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
         .gradient-blue { background: linear-gradient(135deg, #007aff 0%, #0051af 100%); }
+        .gradient-dark { background: linear-gradient(135deg, #424245 0%, #1d1d1f 100%); }
+        .btn-action { transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-action:active { transform: scale(0.96); }
     </style>
 </head>
 <body class="pb-32">
+
     <header class="pt-12 pb-8 px-6 text-center">
         <h1 class="text-3xl font-extrabold tracking-tight">광주 분양 <span class="text-slate-400 font-medium">마스터 리스트</span></h1>
     </header>
 
     <main class="max-w-md mx-auto px-6 space-y-12">
+        
         <section class="glass-card rounded-[2.5rem] p-8 border-2 border-blue-500/20">
             <h2 class="text-2xl font-bold mb-4">전문가 상담 신청</h2>
             <div class="space-y-3">
                 <input type="text" id="userName" placeholder="성함" class="w-full p-4 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-500">
                 <input type="tel" id="userPhone" placeholder="연락처 (010-0000-0000)" class="w-full p-4 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-500">
-                <button id="submitBtn" class="w-full gradient-blue py-4 rounded-2xl text-white font-bold shadow-lg transition active:scale-95">
+                <button id="submitBtn" class="w-full gradient-blue py-4 rounded-2xl text-white font-bold shadow-lg btn-action">
                     상담 예약증 발급받기
                 </button>
             </div>
         </section>
-        </main>
+
+        <article class="glass-card rounded-[2.5rem] overflow-hidden">
+            <div class="relative">
+                <img src="./apt_a.jpg" alt="A아파트" class="w-full h-64 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-blue-600/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">STATION PIANO</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-2">A 아파트 <span class="text-gray-400 font-normal ml-1">송정</span></h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">역세권 입지와 송정지구의 미래 가치</p>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                    <a href="./a.pdf" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700 text-center">브로슈어</a>
+                    <a href="#" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700 text-center">분석 보기</a>
+                </div>
+                <a href="tel:010-2556-7974" class="block w-full text-center gradient-blue py-4 rounded-2xl text-white font-bold btn-action shadow-lg">상담 연결</a>
+            </div>
+        </article>
+
+        <article class="glass-card rounded-[2.5rem] overflow-hidden">
+            <div class="relative">
+                <img src="./apt_b.jpg" alt="B아파트" class="w-full h-64 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-green-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">EDU & PARK</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-2">B 아파트 <span class="text-gray-400 font-normal ml-1">수완</span></h2>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">명품 학군과 숲세권 인프라</p>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                    <a href="./b.pdf" target="_blank" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700 text-center">브로슈어</a>
+                    <a href="#" class="btn-action bg-gray-100 py-4 rounded-2xl text-sm font-semibold text-gray-700 text-center">분석 보기</a>
+                </div>
+                <a href="tel:010-2556-7974" class="block w-full text-center gradient-blue py-4 rounded-2xl text-white font-bold btn-action shadow-lg">상담 연결</a>
+            </div>
+        </article>
+
+        <article class="gradient-dark rounded-[2.5rem] overflow-hidden text-white shadow-2xl border border-white/5">
+            <div class="relative">
+                 <img src="./mall.jpg" alt="상가" class="w-full h-64 object-cover opacity-80">
+                <div class="absolute top-4 left-4">
+                    <span class="bg-amber-500/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-extrabold text-white">PREMIUM SHOP</span>
+                </div>
+            </div>
+            <div class="p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4">D 테라스 스퀘어 <span class="text-white/40 font-normal">상가</span></h2>
+                <p class="text-white/60 text-sm leading-relaxed mb-8 px-4">수익형 부동산의 절대적 투자가치</p>
+                <a href="tel:010-2556-7974" class="btn-action bg-white text-black flex items-center justify-center gap-2 py-5 rounded-2xl font-bold">수익률 분석 상담</a>
+            </div>
+        </article>
+
+    </main>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        const firebaseConfig = {
+        // 사용자님의 실제 키값으로 채워주세요!
+       const firebaseConfig = {
   apiKey: "AIzaSyBu_c_GAVW0SXxdVdl4QFu-fm6bNS-kl8Y",
   authDomain: "bdsrich-5564f.firebaseapp.com",
   projectId: "bdsrich-5564f",
@@ -43,6 +100,7 @@
   appId: "1:989050757379:web:114c686247fcdb5b040936",
   measurementId: "G-JSSL62PPRC"
 };
+
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
@@ -52,12 +110,21 @@
             if (!name || !phone) return alert("정보를 모두 입력해주세요.");
 
             try {
+                // 버튼 비활성화로 중복 전송 방지
+                const btn = document.getElementById('submitBtn');
+                btn.disabled = true;
+                btn.innerText = "전송 중...";
+
                 await addDoc(collection(db, "consultations"), {
                     name, phone, status: "대기", createdAt: serverTimestamp()
                 });
                 alert("예약증이 발급되었습니다!");
                 location.reload();
-            } catch (e) { alert("오류가 발생했습니다."); }
+            } catch (e) { 
+                console.error(e);
+                alert("오류가 발생했습니다.");
+                document.getElementById('submitBtn').disabled = false;
+            }
         });
     </script>
 </body>
