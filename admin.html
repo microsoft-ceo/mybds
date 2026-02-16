@@ -39,7 +39,15 @@
         import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        const firebaseConfig = { /* 메인 페이지와 동일한 설정값 */ };
+        const firebaseConfig = {
+  apiKey: "AIzaSyBu_c_GAVW0SXxdVdl4QFu-fm6bNS-kl8Y",
+  authDomain: "bdsrich-5564f.firebaseapp.com",
+  projectId: "bdsrich-5564f",
+  storageBucket: "bdsrich-5564f.firebasestorage.app",
+  messagingSenderId: "989050757379",
+  appId: "1:989050757379:web:114c686247fcdb5b040936",
+  measurementId: "G-JSSL62PPRC"
+};
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
@@ -91,3 +99,4 @@
     </script>
 </body>
 </html>
+
