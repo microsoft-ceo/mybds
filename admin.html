@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상담 신청 관리자 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">상담 신청 명단 관리</h1>
+            <button id="downloadExcel" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition">
+                Excel 다운로드
+            </button>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="p-4">신청 시각</th>
+                        <th class="p-4">이름</th>
+                        <th class="p-4">연락처</th>
+                        <th class="p-4">상태</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // 파이어베이스 설정값 (index.html과 동일하게 넣으세요)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "bdsrich.firebaseapp.com",
+            projectId: "bdsrich",
+            storageBucket: "bdsrich.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        let listData = []; // 엑셀 변환용 데이터 저장소
+
+        // 1. 데이터 불러오기 및 테이블 표시
+        async function loadData() {
+            const q = query(collection(db, "consultations"), orderBy("createdAt", "desc"));
+            const querySnapshot = await getDocs(q);
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = "";
+            listData = [];
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const date = data.createdAt ? data.createdAt.toDate().toLocaleString('ko-KR') : '-';
+                
+                // 엑셀 저장용 데이터 구성
+                listData.push({
+                    "신청 시각": date,
+                    "이름": data.name,
+                    "연락처": data.phone,
+                    "상태": data.status
+                });
+
+                // 화면 테이블 구성
+                tableBody.innerHTML += `
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-4 text-sm text-gray-600">${date}</td>
+                        <td class="p-4 font-semibold">${data.name}</td>
+                        <td class="p-4">${data.phone}</td>
+                        <td class="p-4"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">${data.status}</span></td>
+                    </tr>
+                `;
+            });
+        }
+
+        // 2. 엑셀 다운로드 기능
+        document.getElementById('downloadExcel').addEventListener('click', () => {
+            if (listData.length === 0) {
+                alert("내려받을 데이터가 없습니다.");
+                return;
+            }
+            
+            // 엑셀 파일 생성
+            const worksheet = XLSX.utils.json_to_sheet(listData);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "상담신청명단");
+            
+            // 파일 저장 (파일명에 오늘 날짜 포함)
+            const fileName = `부동산_상담명단_${new Date().toISOString().slice(0,10)}.xlsx`;
+            XLSX.writeFile(workbook, fileName);
+        });
+
+        loadData();
+    </script>
+</body>
+</html>
